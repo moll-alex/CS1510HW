@@ -35,6 +35,7 @@ void queue<T>::enqueue(const T& x)
 		tmp->m_next=m_next->m_next;
 		m_next->m_next=tmp;
 		m_next=tmp;
+		m_size++;
 	}
 	else
 	{
@@ -50,6 +51,7 @@ void queue<T>::dequeue()
 		queue*tmp=m_next->m_next;
 		m_next->m_next=tmp->m_next;
 		delete tmp;
+		m_size--;
 		if (m_next==tmp)
 			m_next=NULL;
 	}
@@ -59,4 +61,5 @@ void queue<T>::clear()
 {
 	while (m_next!=NULL)
 		this->dequeue();
+	m_size=0;
 }

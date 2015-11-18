@@ -2,26 +2,66 @@
 //Section B
 
 #include "queue.h"
+#include <string>
 #include <iostream>
 using namespace std;
 
+void putenqueue(queue<customer>& A, queue<customer>& B, customer& C);
 
 int main()
-{
-	cout<<"hello world"<<endl;
+{	
+	int customer_num=-1;
+	int time_input=0;
+	int time=0;
+	
 	queue<customer> A;
-	customer robert;
-	customer bob;
+	queue<customer> B;
 	customer temp;
-	bob.modcustomer("bob", 3, 7);
-	robert.modcustomer("robert", 4, 5);
-	A.enqueue(bob);
-	A.enqueue(robert);
-	temp=A.front();
-	cout<<temp.getname();
-	temp=A.back();
-	cout<<temp.getname();
-	A.clear();
-	temp=A.front();
-	A.clear();
+	
+	string name;
+	int tickets;
+	
+	cin>>customer_num;
+	
+	while(customer_num!=0)
+	{
+		cin>>time_input;
+		if (time!=time_input && A.isEmpty() && B.isEmpty())
+		{	
+			time=time_input;
+			cin>>name;
+			cin>>tickets;
+			temp.modcustomer(name, tickets, time_input);
+			putenqueue(A, B, temp);
+			customer_num++;
+		}			
+		// else if (time!=time_input && (!A.isEmpty() || !B.isEmpty()))
+		// {
+			// if (!A.isEmpty())
+			// {
+				// temp=A.front();
+				// if (temp.gettoa()==(time+5))
+				// {
+					// temp.mintickets();
+					// if (temp.gettickets()==0)
+					// {
+						// A.dequeue();
+					// }
+				// }
+			// }
+			// if (!B.isEmpty())
+			// {
+				// temp=B.front();
+			// }
+		// }
+		customer_num--;
+	}
+}
+void putenqueue(queue<customer>& A, queue<customer>& B, customer& C)
+{
+	if (A.getsize()<=B.getsize())
+		A.enqueue(C);
+	else
+		B.enqueue(C);
+	return;
 }

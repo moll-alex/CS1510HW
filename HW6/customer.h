@@ -18,6 +18,7 @@ class customer
 		int const gettoa() {return toa; }
 		void modtickets(int x) {tickets=x;}
 		void modcustomer(string x, int tick, int time) {name=x; tickets=tick; toa=time;}
+		void mintickets() {tickets--;}
 };
 
 #endif
