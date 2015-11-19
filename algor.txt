@@ -1,0 +1,13 @@
+tickets.cpp algorithm
+
+start time=0
+take first customer
+	-set customer 1 toa to time
+	-put customer 1 in A
+	-output "customer 1 has joined line A"
+take second customer time
+	-compare customer 2 time with time of customer 1
+		-if diff>5 subtract ticket
+			-if tickets=0
+				remove customer 1
+		-put customer 2 in line
