@@ -16,9 +16,9 @@ class customer
 		string getname() const {return name; }
 		int gettickets() const {return tickets; }
 		int gettoa() const {return toa; }
-		void modtickets(int x) {tickets=x;}
+		//void modtickets(int x) {tickets=x;}
 		void modcustomer(string x, int tick, int time) {name=x; tickets=tick; toa=time;}
-		void mintickets() {tickets--;}
+		void decrement() {tickets--;}
 };
 
 #endif
