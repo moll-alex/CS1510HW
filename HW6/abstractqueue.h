@@ -80,7 +80,6 @@ public:
   // Purpose: clears the queue
   // Postconditions: the queue is now empty
   virtual void clear() = 0;
-
 };
 
 #endif
